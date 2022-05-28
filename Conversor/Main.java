@@ -1,8 +1,10 @@
 package Conversor;
 
 import java.io.*;
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Locale;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,11 +15,7 @@ public class Main {
                 br.lines().forEach(linha -> {
                     String[] info = linha.split(";");
                     String[] novo = new String[52];
-                    int count = 0;
-                    for (String s : novo) {
-                        novo[count] = "NULL";
-                        count++;
-                    }
+                    Arrays.fill(novo, "NULL");
                     if (info.length < 52) {
                         for (int i = 0; i < info.length; i++) {
                             if (info[i] == null) novo[i] = "NULL";
