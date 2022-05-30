@@ -10,7 +10,8 @@ public class Main {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
         List<Paciente> list = new ArrayList<>();
-        String path = "C:\\Users\\Falik\\Documents\\connazinica\\Paciente.csv";
+        Header h = new Header("CEBOLA", "PICLES", "GERGELIM", "CNTRL-3456", "P");
+        String path = "C:\\Users\\Falik\\Documents\\connazinica\\PacienteTeste.csv";
             try (BufferedReader br = new BufferedReader(new FileReader(path))) {
                 br.lines().forEach(linha -> {
                     String[] info = linha.split(";");
@@ -46,6 +47,7 @@ public class Main {
                 for (Paciente p : list) {
                     p.ajeitaNome();
                     p.ajeitaNasc();
+                    System.out.println(h);
                     System.out.println(p);
                 }
 
@@ -57,6 +59,7 @@ public class Main {
         try (BufferedWriter bw = new
                 BufferedWriter(new FileWriter(pathOut))) {
             for (Paciente p : list) {
+                bw.write(h.toString());
                 bw.write(p.toString());
                 bw.newLine();
             }

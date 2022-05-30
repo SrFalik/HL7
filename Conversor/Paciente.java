@@ -4,153 +4,153 @@ import java.util.Arrays;
 
 public class Paciente {
 
-    private String CODIGO, NOME, NASCIMENTO, SEXO, LOGRADOURO, NUMERO, BAIRRO, CIDADE, UF, TELEFONE_CELULAR, TELEFONE_RESIDENCIAL, TELEFONE_COMERCIAL, RG, ORGAO_EMISSOR;
+    private String codigo, nome, nascimento, sexo, logradouro, numero, bairro, cidade, uf, telefoneCelular, telefoneResidencial, telefoneComercial, rg, orgaoEmissor;
 
-    public Paciente(String CODIGO, String NOME, String NASCIMENTO, String SEXO, String LOGRADOURO, String NUMERO, String BAIRRO, String CIDADE, String UF, String TELEFONE_CELULAR, String TELEFONE_RESIDENCIAL, String TELEFONE_COMERCIAL, String RG, String ORGAO_EMISSOR) {
-        this.CODIGO = CODIGO;
-        this.NOME = NOME;
-        this.NASCIMENTO = NASCIMENTO;
-        this.SEXO = SEXO;
-        this.LOGRADOURO = LOGRADOURO;
-        this.NUMERO = NUMERO;
-        this.BAIRRO = BAIRRO;
-        this.CIDADE = CIDADE;
-        this.UF = UF;
-        this.TELEFONE_CELULAR = TELEFONE_CELULAR;
-        this.TELEFONE_RESIDENCIAL = TELEFONE_RESIDENCIAL;
-        this.TELEFONE_COMERCIAL = TELEFONE_COMERCIAL;
-        this.RG = RG;
-        this.ORGAO_EMISSOR = ORGAO_EMISSOR;
+    public Paciente(String codigo, String nome, String nascimento, String sexo, String logradouro, String numero, String bairro, String cidade, String uf, String telefoneCelular, String telefoneResidencial, String telefoneComercial, String rg, String orgaoEmissor) {
+        this.codigo = codigo;
+        this.nome = nome;
+        this.nascimento = nascimento;
+        this.sexo = sexo;
+        this.logradouro = logradouro;
+        this.numero = numero;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.uf = uf;
+        this.telefoneCelular = telefoneCelular;
+        this.telefoneResidencial = telefoneResidencial;
+        this.telefoneComercial = telefoneComercial;
+        this.rg = rg;
+        this.orgaoEmissor = orgaoEmissor;
     }
 
-    public String getCODIGO() {
-        return CODIGO;
+    public String getcodigo() {
+        return codigo;
     }
 
-    public void setCODIGO(String CODIGO) {
-        this.CODIGO = CODIGO;
+    public void setcodigo(String codigo) {
+        this.codigo = codigo;
     }
 
-    public String getNOME() {
-        return NOME;
+    public String getnome() {
+        return nome;
     }
 
-    public void setNOME(String NOME) {
-        this.NOME = NOME;
+    public void setnome(String nome) {
+        this.nome = nome;
     }
 
-    public String getNASCIMENTO() {
-        return NASCIMENTO;
+    public String getnascimento() {
+        return nascimento;
     }
 
-    public void setNASCIMENTO(String NASCIMENTO) {
-        this.NASCIMENTO = NASCIMENTO;
+    public void setnascimento(String nascimento) {
+        this.nascimento = nascimento;
     }
 
-    public String getSEXO() {
-        return SEXO;
+    public String getsexo() {
+        return sexo;
     }
 
-    public void setSEXO(String SEXO) {
-        this.SEXO = SEXO;
+    public void setsexo(String sexo) {
+        this.sexo = sexo;
     }
 
-    public String getLOGRADOURO() {
-        return LOGRADOURO;
+    public String getlogradouro() {
+        return logradouro;
     }
 
-    public void setLOGRADOURO(String LOGRADOURO) {
-        this.LOGRADOURO = LOGRADOURO;
+    public void setlogradouro(String logradouro) {
+        this.logradouro = logradouro;
     }
 
-    public String getNUMERO() {
-        return NUMERO;
+    public String getnumero() {
+        return numero;
     }
 
-    public void setNUMERO(String NUMERO) {
-        this.NUMERO = NUMERO;
+    public void setnumero(String numero) {
+        this.numero = numero;
     }
 
-    public String getBAIRRO() {
-        return BAIRRO;
+    public String getbairro() {
+        return bairro;
     }
 
-    public void setBAIRRO(String BAIRRO) {
-        this.BAIRRO = BAIRRO;
+    public void setbairro(String bairro) {
+        this.bairro = bairro;
     }
 
-    public String getCIDADE() {
-        return CIDADE;
+    public String getcidade() {
+        return cidade;
     }
 
-    public void setCIDADE(String CIDADE) {
-        this.CIDADE = CIDADE;
+    public void setcidade(String cidade) {
+        this.cidade = cidade;
     }
 
-    public String getUF() {
-        return UF;
+    public String getuf() {
+        return uf;
     }
 
-    public void setUF(String UF) {
-        this.UF = UF;
+    public void setuf(String uf) {
+        this.uf = uf;
     }
 
-    public String getTELEFONE_CELULAR() {
-        return TELEFONE_CELULAR;
+    public String gettelefoneCelular() {
+        return telefoneCelular;
     }
 
-    public void setTELEFONE_CELULAR(String TELEFONE_CELULAR) {
-        this.TELEFONE_CELULAR = TELEFONE_CELULAR;
+    public void settelefoneCelular(String telefoneCelular) {
+        this.telefoneCelular = telefoneCelular;
     }
 
-    public String getTELEFONE_RESIDENCIAL() {
-        return TELEFONE_RESIDENCIAL;
+    public String getTelefoneResidencial() {
+        return telefoneResidencial;
     }
 
-    public void setTELEFONE_RESIDENCIAL(String TELEFONE_RESIDENCIAL) {
-        this.TELEFONE_RESIDENCIAL = TELEFONE_RESIDENCIAL;
+    public void setTelefoneResidencial(String telefone_residencial) {
+        this.telefoneResidencial = telefone_residencial;
     }
 
-    public String getTELEFONE_COMERCIAL() {
-        return TELEFONE_COMERCIAL;
+    public String gettelefoneComercial() {
+        return telefoneComercial;
     }
 
-    public void setTELEFONE_COMERCIAL(String TELEFONE_COMERCIAL) {
-        this.TELEFONE_COMERCIAL = TELEFONE_COMERCIAL;
+    public void settelefoneComercial(String telefoneComercial) {
+        this.telefoneComercial = telefoneComercial;
     }
 
-    public String getRG() {
-        return RG;
+    public String getrg() {
+        return rg;
     }
 
-    public void setRG(String RG) {
-        this.RG = RG;
+    public void setrg(String rg) {
+        this.rg = rg;
     }
 
-    public String getORGAO_EMISSOR() {
-        return ORGAO_EMISSOR;
+    public String getorgaoEmissor() {
+        return orgaoEmissor;
     }
 
-    public void setORGAO_EMISSOR(String ORGAO_EMISSOR) {
-        this.ORGAO_EMISSOR = ORGAO_EMISSOR;
+    public void setorgaoEmissor(String orgaoEmissor) {
+        this.orgaoEmissor = orgaoEmissor;
     }
 
     public void ajeitaNasc() {
-        if (!NASCIMENTO.equals("NULL")) {
-            String[] nascimento = NASCIMENTO.split("/");
-            if (nascimento.length == 3) {
-                String aux = nascimento[0];
-                nascimento[0] = nascimento[2];
-                nascimento[2] = aux;
-                NASCIMENTO = Arrays.toString(nascimento).replaceAll("\\[", "").replaceAll("]", "").replaceAll("/", "").replaceAll(", ", "");
+        if (!nascimento.equals("NULL")) {
+            String[] nasc = nascimento.split("/");
+            if (nasc.length == 3) {
+                String aux = nasc[0];
+                nasc[0] = nasc[2];
+                nasc[2] = aux;
+                nascimento = Arrays.toString(nasc).replaceAll("\\[", "").replaceAll("]", "").replaceAll("/", "").replaceAll(", ", "");
             }
             else {
-                NASCIMENTO = "NULL";
+                nascimento = "NULL";
             }
         }
     }
     public void ajeitaNome() {
-        String[] nomeSobrenome = NOME.split(" ");
+        String[] nomeSobrenome = nome.split(" ");
         int contador = 0;
         String aux;
         int parada = nomeSobrenome.length / 2;
@@ -163,25 +163,26 @@ public class Paciente {
             }
             contador++;
         }
-        NOME = Arrays.toString(nomeSobrenome).replaceAll(", ", "^").replaceAll("\\[", "").replaceAll("]", "");
+        nome = Arrays.toString(nomeSobrenome).replaceAll(", ", "^").replaceAll("\\[", "").replaceAll("]", "");
     }
 
     @Override
     public String toString() {
         return "PID|||" +
-                CODIGO + "||" +
-                NOME.toUpperCase() + "|" +
-                NASCIMENTO + "|" +
-                SEXO.toUpperCase() + "|||" +
-                LOGRADOURO.toUpperCase() + "^" +
-                NUMERO.toUpperCase() + "^" +
-                BAIRRO.toUpperCase() + "^" +
-                CIDADE.toUpperCase() + "^" +
-                UF.toUpperCase() + "||" +
-                TELEFONE_CELULAR + "|" +
-                TELEFONE_RESIDENCIAL + "|" +
-                TELEFONE_COMERCIAL + "||" +
-                RG + "^" +
-                ORGAO_EMISSOR.toUpperCase();
+                codigo + "||" +
+                nome.toUpperCase() + "|" +
+                nascimento + "|" +
+                sexo.toUpperCase() + "|||" +
+                logradouro.toUpperCase() + "^" +
+                numero.toUpperCase() + "^" +
+                bairro.toUpperCase() + "^" +
+                cidade.toUpperCase() + "^" +
+                uf.toUpperCase() + "||" +
+                telefoneCelular + "|" +
+                telefoneResidencial + "|" +
+                telefoneComercial + "||" +
+                rg.replaceAll(",", "").replaceAll("-", "").replaceAll("\\.", "") + "^" +
+                orgaoEmissor.toUpperCase() +
+                "<cr>";
     }
 }
