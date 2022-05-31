@@ -10,8 +10,9 @@ public class Main {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
         List<Paciente> list = new ArrayList<>();
+        File f = new File("");
         Header h = new Header("CEBOLA", "PICLES", "GERGELIM", "CNTRL-3456", "P");
-        String path = "C:\\Users\\Falik\\Documents\\connazinica\\PacienteTeste.csv";
+        String path = f.getAbsolutePath() + "/conclinica/Paciente.csv";
             try (BufferedReader br = new BufferedReader(new FileReader(path))) {
                 br.lines().forEach(linha -> {
                     String[] info = linha.split(";");
@@ -49,13 +50,14 @@ public class Main {
                     p.ajeitaNasc();
                     System.out.println(h);
                     System.out.println(p);
+                    System.out.println();
                 }
 
             } catch (IOException | ArrayIndexOutOfBoundsException e) {
                 System.out.println(e.getMessage());
             }
 
-        String pathOut = "C:\\Users\\Falik\\Documents\\connazinica\\PacienteCebola.txt";
+        String pathOut = f.getAbsolutePath() + "/conclinica/PacienteTeste.txt";
         try (BufferedWriter bw = new
                 BufferedWriter(new FileWriter(pathOut))) {
             for (Paciente p : list) {
