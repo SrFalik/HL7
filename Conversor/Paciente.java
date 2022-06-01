@@ -178,9 +178,9 @@ public class Paciente {
                 bairro.toUpperCase() + "^" +
                 cidade.toUpperCase() + "^" +
                 uf.toUpperCase() + "||" +
-                telefoneCelular + "|" +
-                telefoneResidencial + "|" +
-                telefoneComercial + "||" +
+                telefoneCelular + "||" +
+//                telefoneResidencial + "|" +
+//                telefoneComercial + "||" +
                 rg.replaceAll(",", "").replaceAll("-", "").replaceAll("\\.", "") + "^" +
                 orgaoEmissor.toUpperCase() +
                 "<cr>";

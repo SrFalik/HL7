@@ -14,16 +14,15 @@ public class Header {
     private static final DateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
 
     private static final String tipo = "ORU^R01";
-    private String misterio; // "CNTRL-3456"
-    private String misterioDois; // "P"
+    private final String controle = "CNTRL-";
+    private String misterio; // "P"
     private static final String versao = "2.4<cr>";
 
-    public Header(String locEnvio, String recebedor, String locReceb, String misterio, String misterioDois) {
+    public Header(String locEnvio, String recebedor, String locReceb, String misterio) {
         this.locEnvio = locEnvio;
         this.recebedor = recebedor;
         this.locReceb = locReceb;
         this.misterio = misterio;
-        this.misterioDois = misterioDois;
     }
 
 
@@ -60,14 +59,6 @@ public class Header {
         this.misterio = misterio;
     }
 
-    public String getMisterioDois() {
-        return misterioDois;
-    }
-
-    public void setMisterioDois(String misterioDois) {
-        this.misterioDois = misterioDois;
-    }
-
     public String getVersao() {
         return versao;
     }
@@ -81,8 +72,14 @@ public class Header {
         locReceb + "|" +
         dateFormat.format(new Date()) + "||" +
         tipo + "|" +
+        controle + numeroRandom() + "|" +
         misterio + "|" +
-        misterioDois + "|" +
         versao;
     }
+
+
+    public int numeroRandom() {
+        return (int) (Math.random() * 10000);
+    }
+
 }

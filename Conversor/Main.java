@@ -11,8 +11,8 @@ public class Main {
         Locale.setDefault(Locale.US);
         List<Paciente> list = new ArrayList<>();
         File f = new File("");
-        Header h = new Header("CEBOLA", "PICLES", "GERGELIM", "CNTRL-3456", "P");
-        String path = f.getAbsolutePath() + "/conclinica/Paciente.csv";
+        Header h = new Header("CEBOLA", "PICLES", "GERGELIM", "P");
+        String path = f.getAbsolutePath() + "/conclinica/cabecalho.csv";
             try (BufferedReader br = new BufferedReader(new FileReader(path))) {
                 br.lines().forEach(linha -> {
                     String[] info = linha.split(";");
