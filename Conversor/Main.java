@@ -12,7 +12,10 @@ public class Main {
         List<Paciente> list = new ArrayList<>();
         List<RequisicaoObservacao> listPront = new ArrayList<>();
         File f = new File("");
-        Header h = new Header("CEBOLA", "PICLES", "GERGELIM", "P");
+        String locEnvio = "CEBOLA";
+        String recebedor = "PICLES";
+        String locReceb = "GERGELIM";
+        Header h = new Header(locEnvio, recebedor, locReceb, "P");
         String path = f.getAbsolutePath() + "/conclinica/Paciente.csv";
         String pathPront = f.getAbsolutePath() + "/conclinica/ProntuarioEndoscopia.csv";
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
@@ -47,14 +50,6 @@ public class Main {
                 }
             });
 
-            for (Paciente p : list) {
-                p.ajeitaNome();
-                p.ajeitaNasc();
-                System.out.println(h);
-                System.out.println(p);
-                System.out.println();
-            }
-
         } catch (IOException | ArrayIndexOutOfBoundsException e) {
             System.out.println(e.getMessage());
         }
@@ -74,6 +69,9 @@ public class Main {
 
                 if (!info[0].equalsIgnoreCase("CODIGO_PACIENTE")) {
                     listPront.add(new RequisicaoObservacao(
+                            locEnvio,
+                            recebedor,
+                            locReceb,
                             info[0],
                             info[1],
                             info[2],
@@ -81,25 +79,31 @@ public class Main {
                             info[28]));
                 }
             });
-
+            String pathOut = f.getAbsolutePath() + "/conclinica/output.txt";
+            PrintStream fileStream = new PrintStream(f.getAbsolutePath() + "/conclinica/output.txt");
             for (RequisicaoObservacao r : listPront) {
-                System.out.println(r);
-            }
-
-
-            String pathOut = f.getAbsolutePath() + "/conclinica/PacienteTeste.txt";
-            try (BufferedWriter bw = new
-                    BufferedWriter(new FileWriter(pathOut))) {
                 for (Paciente p : list) {
-                    bw.write(h.toString());
-                    bw.write(p.toString());
-                    bw.newLine();
+                    if (r.getCodigo().equals(p.getcodigo())) {
+                        r.ajeitaData();
+                        p.ajeitaNome();
+                        p.ajeitaNasc();
+                        System.out.println(h);
+                        System.out.println(p);
+                        System.out.println(r);
+                        System.out.println(r.toStringObx());
+                        System.out.println();
+                        fileStream.println(h);
+                        fileStream.println(p);
+                        fileStream.println(r);
+                        fileStream.println(r.toStringObx());
+                        fileStream.println();
+                        }
+                        }
                 }
-            } catch (IOException e) {
-                System.out.println(e.getMessage());
-            }
+            } catch (FileNotFoundException ex) {
+            System.out.println(ex.getMessage());
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            System.out.println(e.getMessage());;
         }
     }
-}
+    }
