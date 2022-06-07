@@ -12,9 +12,9 @@ public class Main {
         List<Paciente> list = new ArrayList<>();
         List<RequisicaoObservacao> listPront = new ArrayList<>();
         File f = new File("");
-        String locEnvio = "CEBOLA";
-        String recebedor = "PICLES";
-        String locReceb = "GERGELIM";
+        String locEnvio = "IBMEC";
+        String recebedor = "CESAR";
+        String locReceb = "CONCLINICA";
         Header h = new Header(locEnvio, recebedor, locReceb, "P");
         String path = f.getAbsolutePath() + "/conclinica/Paciente.csv";
         String pathPront = f.getAbsolutePath() + "/conclinica/ProntuarioEndoscopia.csv";
@@ -79,31 +79,32 @@ public class Main {
                             info[28]));
                 }
             });
-            String pathOut = f.getAbsolutePath() + "/conclinica/output.txt";
-            PrintStream fileStream = new PrintStream(f.getAbsolutePath() + "/conclinica/output.txt");
-            for (RequisicaoObservacao r : listPront) {
-                for (Paciente p : list) {
-                    if (r.getCodigo().equals(p.getcodigo())) {
-                        r.ajeitaData();
-                        p.ajeitaNome();
-                        p.ajeitaNasc();
-                        System.out.println(h);
-                        System.out.println(p);
-                        System.out.println(r);
-                        System.out.println(r.toStringObx());
-                        System.out.println();
-                        fileStream.println(h);
-                        fileStream.println(p);
-                        fileStream.println(r);
-                        fileStream.println(r.toStringObx());
-                        fileStream.println();
+
+            try (PrintStream fileStream = new PrintStream(f.getAbsolutePath() + "/conclinica/mensagens_hl7.txt")
+            ) {
+                for (RequisicaoObservacao r : listPront) {
+                    for (Paciente p : list) {
+                        if (r.getCodigo().equals(p.getcodigo())) {
+                            r.ajeitaData();
+                            p.ajeitaNome();
+                            p.ajeitaNasc();
+                            System.out.println(h);
+                            System.out.println(p);
+                            System.out.println(r);
+                            System.out.println(r.toStringObx());
+                            System.out.println();
+                            fileStream.println(h);
+                            fileStream.println(p);
+                            fileStream.println(r);
+                            fileStream.println(r.toStringObx());
+                            fileStream.println();
                         }
-                        }
+                    }
                 }
-            } catch (FileNotFoundException ex) {
-            System.out.println(ex.getMessage());
-        } catch (IOException e) {
-            System.out.println(e.getMessage());;
-        }
+            }
+            System.out.println("Salvando mensagens em: " + f.getAbsolutePath() + "/conclinica/mensagens_hl7.txt");
+        } catch (IOException ex) {
+                System.out.println(ex.getMessage());
+            }
     }
     }
